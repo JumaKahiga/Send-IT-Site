@@ -35,27 +35,28 @@
     
     <div class="cosmopolitan">
     <section class="float_center">
-        <form action="dashboard.html" class="nairobian">
+        <form id="registeruser" class="nairobian">
             <h1>Register to place order</h1>
+            <p id="registrationmessage"></p>
 
             <label for="name"><b>Name</b></label>
-            <input type="text" placeholder="Enter your full name" name="name" required>
+            <input id="username" type="text" placeholder="Enter your full name" name="name" required>
 
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input id="useremail" type="text" placeholder="Enter Email" name="email" required>
 
             <label for="telephone"><b>Phone Number</b></label>
-            <input type="text" placeholder="Enter your phone number" name="telephone" required>
+            <input id="contactphone" type="text" placeholder="Enter your phone number" name="telephone" required>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input id="password" type="password" placeholder="Enter Password" name="psw" required>
             
             <label for="psw-repeat"><b>Repeat Password</b></label>
             <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
     
             <p>By completing this registration you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
             
-          <button type="submit" class="btn">Register</button>
+          <button id="registerbutton" type="submit" class="btn">Register</button>
         </form>
         
     </section>
@@ -64,3 +65,5 @@
     </div>
     
 </body>
+<script src="js/main.js"></script>
+</html>
