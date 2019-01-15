@@ -1,0 +1,363 @@
+.site-layout {
+    float: left;
+    width: 100%;
+    background-color: floralwhite;
+}
+
+body{
+    font-family: Arial, sans-serif, Helvetica
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.container{
+    width:80%;
+    overflow: hidden;
+    margin: auto;
+}
+
+header{
+    background: red;
+    color:cornsilk;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: red 3px solid;
+}
+
+header a{
+    color: black;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+}
+
+
+
+header li{
+    display: inline;
+    float:left;
+    padding: 0 20px 0 20px;
+}
+
+header #top-bar{
+    float: left;
+}
+
+header #top-bar h1{
+    margin: 0;
+}
+
+header nav{
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight, header .active a{
+    color:beige;
+    font-weight: bold;
+}
+
+header a:hover{
+    color:beige;
+    font-weight: bold;
+}
+
+#urban{
+    min-height: 400px;
+    color:yellow;
+    background:url(../img/delivery.jpg) no-repeat -400px;
+    text-align: center;
+    text-shadow: 1px 1px black;
+}
+
+#urban h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#urban p{
+    font-size: 20px;
+}
+
+
+#rural{
+    margin-top: 20px;
+}
+
+#rural .box{
+    float: left;
+    text-align: center;
+    width: 30%;
+    padding: 10px;
+}
+
+#rural .box img{
+    width: 50px;
+}
+
+/** buttons */
+
+.btn {
+  background-color: green;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.update1-btn {
+    background-color: green;
+    display: inline-block;
+    position: relative;
+    left: 35%;
+    color: black;
+    padding: 16px 20px;
+    cursor: pointer;
+    opacity: 0.9;
+
+}
+
+.update2-btn {
+    background-color: orange;
+    display: inline-block;
+    position: relative;
+    left: 35%;
+    color: black;
+    padding: 16px 20px;
+    cursor: pointer;
+    opacity: 0.9;
+
+}
+
+.update3-btn {
+    background-color: red;
+    display: inline-block;
+    position: relative;
+    left: 35%;
+    color: black;
+    padding: 16px 20px;
+    cursor: pointer;
+    opacity: 0.9;
+
+}
+
+.alt-btn {
+  background-color: dimgray;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+
+.btn:hover {
+  opacity: 1;
+}
+
+
+/* Forms */
+.nairobian {
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid red;
+}
+
+.nairobian h1 {
+    text-align: center;
+    color: black;
+}
+
+
+  input[type=text], input[type=password], input[type=textarea], input[type=date] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password], input[type=textarea], input[type=date]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.cosmopolitan {
+  background-image: url("../img/packing.jpg");
+  min-height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#provincial {
+  background-image: url("../img/deliveryman.jpg");
+  min-height: 550px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.float_center {
+  float: right;
+
+  position: relative;
+  right: 32%;
+  text-align: left;
+}
+.float_center > .child {
+  position: relative;
+  left: 50%;
+}
+
+
+/* Dashboard */
+.dashboard-menu{
+  height: 100%;
+  width: 160px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: red;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.dashboard-menu a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+}
+
+.dashboard-menu a:hover {
+  color: beige;
+}
+
+/* Grid */
+
+.horizontal-menu { 
+    grid-area: header;
+    padding-top: 30px;
+    min-height: 70px;
+    background: red;
+    color: cornsilk;
+    
+}
+
+.horizontal-menu h1 {
+    padding-left: 30px;
+}
+
+.horizontal-menu a {
+    text-decoration: none;
+    color: cornsilk;
+}
+
+.vertical-menu { 
+    grid-area: menu;
+    padding: 6px 8px 6px 16px;
+    position: relative;
+    width: 160px;
+    display: block;
+    background-color: antiquewhite;
+    border: 2px solid red;
+}
+
+.vertical-menu h5 {
+    text-align: left;
+    color: black;
+    padding: 3px;
+}
+
+.vertical-menu a {
+    padding-top: 30px;
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    display:inline-block;
+}
+
+.vertical-menu a:hover{
+    color:green;
+    font-weight: bold;
+    
+}
+
+.dashboard-content { 
+    grid-area: main;
+}
+
+.dashboard-right { 
+    grid-area: right;
+}
+
+.dashboard-footer { 
+    grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: white;
+}
+.grid-container > div {
+  text-align: left;
+  padding: 30px 0;
+  font-size: 15px;
+}
+
+/* Grid */
+
+/* Table */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid red;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: palegreen;
+}
+
+/* Table */
+
+
+
+/* Footer */
+footer{
+    padding: 20px;
+    margin-top: 20px;
+    color:orange;
+    background-color: black;
+    text-align: center;
+}
+
+
+
