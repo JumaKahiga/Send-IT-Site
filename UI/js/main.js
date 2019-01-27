@@ -1,8 +1,10 @@
 // Js to connect UI with API
 
 const signupBtn = document.querySelector('#registerbutton')
+const signinBtn = document.querySelector('#loginbutton')
 
 const signupResource = "https://sendit-v2-app.herokuapp.com/api/v2/auth/signup"
+const signinResource = "https://sendit-v2-app.herokuapp.com/api/v2/auth/login"
 
 
 
@@ -50,10 +52,40 @@ function signupUser(event){
     .catch((error)=> console.log(error));
 }
 
+function signinUser(event){
+    event.preventDefault();
+    var userEmail = document.getElementById('useremail').value 
+    var password = document.getElementById('psw').value
+    
+    fetch(signinResource, {
+        mode: 'cors',
+        method: 'POST',
+        headers: {
+            "Accept": 'application/json',
+            "Content-type": 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify({
+            email: userEmail,
+            password: password
+        })
+    })
+    .then((res) => {
+        if (res.status == 200){
+            window.location.href = 'dashboard.html';
+        }
+        res.json().then((message)=> console.log(message));
+    })
+    .catch((error)=> console.log(error));
+}
+
 
 // Event listeners
 documentTitle = document.querySelector('title').innerText;
 
 if (documentTitle == "Register"){
     signupBtn.addEventListener('click', signupUser)
+}
+
+if (documentTitle == "Login"){
+    signinBtn.addEventListener('click', signinUser)
 }
