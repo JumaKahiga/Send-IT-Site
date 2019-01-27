@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>SendIT</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Styles -->
@@ -35,19 +35,19 @@
     
     <div id="provincial">
     <section class="float_center">
-        <form action="dashboard.html" class="nairobian">
+        <form action="" class="nairobian">
             <h1>Log in</h1>
 
 
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input id="useremail" type="text" placeholder="Enter Email" name="email" required>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
             
             <p>Do not have an account? Please <a href="register.html" style="color:dodgerblue">register</a>.</p>
             
-          <button type="submit" class="btn">Log in</button>
+          <button id="loginbutton" type="submit" class="btn">Log in</button>
         </form>
         
     </section>
@@ -56,3 +56,6 @@
     </div>
     
 </body>
+    <script src="js/main.js"></script>
+
+</html>
