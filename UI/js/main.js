@@ -54,8 +54,8 @@ function signupUser(event){
 
 function signinUser(event){
     event.preventDefault();
-    var userEmail = document.getElementById('useremail').value 
-    var password = document.getElementById('psw').value
+    let userEmail = document.getElementById('useremail').value 
+    let password = document.getElementById('psw').value
     
     fetch(signinResource, {
         mode: 'cors',
@@ -71,9 +71,21 @@ function signinUser(event){
     })
     .then((res) => {
         if (res.status == 200){
-            window.location.href = 'dashboard.html';
+            // window.location.href = 'dashboard.html';
+            res.json().then((message) => {
+                console.log(message);
+                document.getElementById('message').innerHTML = `<p><span>${message.message}</span></p>`;
+                let token = message.tokens.access_token;
+                let refresh_token = message.tokens.refresh_token;
+                sessionStorage.setItem('token', token);
+                sessionStorage.setItem('refresh_token', refresh_token);
+                                     })}
+        else{
+            res.json().then((message)=> {
+                console.log(message);
+                document.getElementById('message').innerHTML = `<p>${message.message}</p>`;
+            })
         }
-        res.json().then((message)=> console.log(message));
     })
     .catch((error)=> console.log(error));
 }
