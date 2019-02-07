@@ -81,7 +81,6 @@ function signinUser(event){
                 sessionStorage.setItem('token', token);
                 sessionStorage.setItem('refresh_token', refresh_token);
                 let decodedToken = tokenDecode(token);
-                console.log(decodedToken);
                 let userRole = decodedToken.identity.user_role;
                 let userId = decodedToken.identity.user_id;
                 let userName = decodedToken.identity.username;
@@ -105,6 +104,15 @@ function tokenDecode(token){
     let base64 = base64url.replace(/-/g, '+').replace(/_/g, '/');
     return JSON.parse(window.atob(base64));
     
+}
+
+function orderPage(userRole){
+    if (userRole == 2){
+        return "order_details.html"
+    }
+    else if (userRole == 1){
+        return "order_details_admin.html"
+    }
 }
 
 function dashboard(event){
@@ -137,14 +145,31 @@ function dashboard(event){
             res.json()
                 .then((data) => {console.log(data)
             if (data === []){
-                document.getElementById('c_table').innerHTML = '<p>No orders available</p>';
                 document.getElementById('d_table').innerHTML = '<p>No orders available</p>'
             }
             else{
-                document.getElementById('username').innerHTML = data[0].client_name
+                document.getElementById('username').innerHTML = data[0].client_name;
+                let parcel_data = data;
+                parcelTable(parcel_data)
             }})
         }
     })
+    
+    let parcelTable = (parcel_data) =>{
+        parcel_data.forEach(parcel => {
+            let orderLink = orderPage(userRole);
+            let singleOrder = document.createElement("tr");
+                singleOrder.innerHTML = `
+                            <td><a href=${orderLink}>${parcel.parcel_id}</a></td>
+                            <td>${parcel.package_desc}</td>
+                            <td>${parcel.recipient_name}</td>
+                            <td>${parcel.location}</td>
+                            <td>${parcel.destination}</td>
+                            <td>${parcel.pickup_date}</td>
+                            <td>${parcel.status}</td> `
+            document.getElementById('d_table').appendChild(singleOrder);
+        })
+    }
     
 
 }
