@@ -7,8 +7,7 @@ const signinBtn = document.querySelector('#loginbutton')
 const signupResource = "https://sendit-v2-app.herokuapp.com/api/v2/auth/signup"
 const signinResource = "https://sendit-v2-app.herokuapp.com/api/v2/auth/login"
 const adminDashboardResource = "https://sendit-v2-app.herokuapp.com/api/v2/parcels"
-//const userDashboardResource = `https://sendit-v2-app.herokuapp.com/api/v2/users/${user_id}/parcels`
-const userDashboardResource = `https://sendit-v2-app.herokuapp.com/api/v2/users/8/parcels`
+
 
 
 function validatePass(){
@@ -123,6 +122,7 @@ function dashboard(event){
     let userId = sessionStorage.getItem('user_id')
     let userName = sessionStorage.getItem('username')
     let newResource = undefined
+    const userDashboardResource = `https://sendit-v2-app.herokuapp.com/api/v2/users/${userId}/parcels`
     
     if (userRole == 2){
         newResource = userDashboardResource
@@ -144,8 +144,8 @@ function dashboard(event){
         if (res.ok){
             res.json()
                 .then((data) => {console.log(data)
-            if (data === []){
-                document.getElementById('d_table').innerHTML = '<p>No orders available</p>'
+            if (data.length == 0){
+                document.getElementById('d_table').innerHTML = '<p>No orders available</p>';
             }
             else{
                 document.getElementById('username').innerHTML = data[0].client_name;
