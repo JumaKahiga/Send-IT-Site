@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>SendIT</title>
+    <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Styles -->
@@ -22,7 +22,8 @@
         </div>
 
         <div class="vertical-menu">
-            <h5>Chris Tucker <span><a href="login.html">(Log out)</a></span></h5>
+            <span><p id="username"></p>
+                <a href="login.html">(Log out)</a></span>
             
             <hr>
             
@@ -38,60 +39,21 @@
         </div>
         <div class="dashboard-content" style="overflow-x:auto;">
             <div>
-            <h3>This table lists orders that are on transit or delivered status</h3>
-            <table>
-                <thead>
+            <h3>Here are your orders</h3>
+            <table id='d_table'>
+                <thead id='d_column'>
                 <tr>
                     <th>Order No.</th>
+                    <th>Package Description</th>
                     <th>Recipient</th>
                     <th>Collection Point</th>
                     <th>Delivery Address</th>
-                    <th>Weight</th>
-                    <th>Price</th>
+                    <th>Pickup Date</th>
                     <th>Status</th>
                 </tr>
                 </thead>
                 
                 <tbody>
-                <tr>
-                    <td><a href="order_details.html">106</a></td>
-                    <td><a href="user_profile.html">John Doe</a></td>
-                    <td>101 st Ruaka</td>
-                    <td>12th st Westlands</td>
-                    <td>40 kg</td>
-                    <td>Ksh 1200</td>
-                    <td>On Transit</td>
-                </tr>
-                
-                <tr>
-                    <td><a href="order_details_admin.html">107</a></td>
-                    <td>Jane Doe</td>
-                    <td>7th st Ruaka</td>
-                    <td>12th st Westlands</td>
-                    <td>20 kg</td>
-                    <td>Ksh 700</td>
-                    <td>Delivered</td>
-                </tr>
-                    
-                <tr>
-                    <td>108</td>
-                    <td>Paul Smith</td>
-                    <td>Mirema Drive</td>
-                    <td>Town Campus Kemu</td>
-                    <td>10 kg</td>
-                    <td>Ksh 400</td>
-                    <td>On Transit</td>
-                </tr>
-                    
-                <tr>
-                    <td>109</td>
-                    <td>Mary Jane</td>
-                    <td>101 st Ruaka</td>
-                    <td>12th st Westlands</td>
-                    <td>15 kg</td>
-                    <td>Ksh 600</td>
-                    <td>Delivered</td>
-                </tr>
                 
                 </tbody>
                 
@@ -100,61 +62,6 @@
             
             <hr>
             
-            <div>
-                        <h3>This table lists completed orders</h3>
-            <table>
-                <thead>
-                <tr>
-                    <th>Order No.</th>
-                    <th>Recipient</th>
-                    <th>Collection Point</th>
-                    <th>Delivery Address</th>
-                    <th>Weight</th>
-                    <th>Price</th>
-                </tr>
-                </thead>
-                
-                <tbody>
-                <tr>
-                    <td><a href="order_details.html">106</a></td>
-                    <td><a href="user_profile.html">John Doe</a></td>
-                    <td>101 st Ruaka</td>
-                    <td>12th st Westlands</td>
-                    <td>40 kg</td>
-                    <td>Ksh 1200</td>
-                </tr>
-                
-                <tr>
-                    <td><a href="order_details_admin.html">107</a></td>
-                    <td>Jane Doe</td>
-                    <td>7th st Ruaka</td>
-                    <td>12th st Westlands</td>
-                    <td>20 kg</td>
-                    <td>Ksh 700</td>
-                </tr>
-                    
-                <tr>
-                    <td>108</td>
-                    <td>Paul Smith</td>
-                    <td>Mirema Drive</td>
-                    <td>Town Campus Kemu</td>
-                    <td>10 kg</td>
-                    <td>Ksh 400</td>
-                </tr>
-                    
-                <tr>
-                    <td>109</td>
-                    <td>Mary Jane</td>
-                    <td>101 st Ruaka</td>
-                    <td>12th st Westlands</td>
-                    <td>15 kg</td>
-                    <td>Ksh 600</td>
-                </tr>
-                
-                </tbody>
-                
-            </table>
-            </div>
         </div>
         
 
@@ -166,5 +73,6 @@
         <p1>SendIT Parcel Delivery Services, Copyright &copy; 2018</p1>
     </footer>
 </body>
+    <script src="js/main.js"></script>
 
 </html>
