@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>SendIT</title>
+    <title>New Order</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Styles -->
@@ -36,32 +36,29 @@
             
             
             <section class="float_center">
-        <form action="dashboard.html" class="nairobian">
+        <form action="" class="nairobian">
             <h3>Place Order</h3>
 
             <label for="recipient"><b>Recipient</b></label>
-            <input type="text" placeholder="Enter recipient&apos;s full name" name="recipient" required>
-            
-            <label for="telephone"><b>Recipient&apos; Phone Number</b></label>
-            <input type="text" placeholder="Enter your phone number" name="telephone" required>
+            <input id="recipient" type="text" placeholder="Enter recipient&apos;s full name" name="recipient" required>
 
             <label for="delivery"><b>Delivery Address</b></label>
-            <input type="text" placeholder="Enter delivery address" name="delivery" required>
+            <input id="destination" type="text" placeholder="Enter delivery address" name="delivery" required>
             
             <label for="collection"><b>Collection Point</b></label>
-            <input type="text" placeholder="Location where package will be collected for delivery" name="collection" required>
+            <input id="location" type="text" placeholder="Location where package will be collected for delivery" name="collection" required>
             
             <label for="collection_date"><b>Collection Date</b></label>
-            <input type="date" placeholder="When will the package be ready for collection by our couriers" name="collection_date" required>
+            <input id="pickup_date" type="date" placeholder="When will the package be ready for collection by our couriers" name="collection_date" required>
             
             <label for="package_desc"><b>Package Description</b></label>
-            <input type="textarea" placeholder="Enter a description of the package" name="package_desc" required>
+            <input id="package_desc" type="textarea" placeholder="Enter a description of the package" name="package_desc" required>
 
             
     
             <p><i>Price will be calculated on collection after our courier weighs the parcel. Our agents will contact you shortly. </i></p>
             
-          <button type="submit" class="btn">Place Order</button>
+          <button id="orderbutton" type="submit" class="btn">Place Order</button>
         </form>
         
     </section>
@@ -77,5 +74,6 @@
         <p1>SendIT Parcel Delivery Services, Copyright &copy; 2018</p1>
     </footer>
 </body>
+    <script src="js/main.js"></script>
 
 </html>

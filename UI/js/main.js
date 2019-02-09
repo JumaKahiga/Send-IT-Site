@@ -3,10 +3,12 @@
 
 const signupBtn = document.querySelector('#registerbutton')
 const signinBtn = document.querySelector('#loginbutton')
+const orderBtn = document.querySelector('#orderbutton')
 
 const signupResource = "https://sendit-v2-app.herokuapp.com/api/v2/auth/signup"
 const signinResource = "https://sendit-v2-app.herokuapp.com/api/v2/auth/login"
 const adminDashboardResource = "https://sendit-v2-app.herokuapp.com/api/v2/parcels"
+const newOrderResource = "https://sendit-v2-app.herokuapp.com/api/v2/parcel"
 
 
 
@@ -174,6 +176,44 @@ function dashboard(event){
 
 }
 
+function createOrder(event){
+    event.preventDefault();
+    let token = sessionStorage.getItem('token')
+    let refreshToken = sessionStorage.getItem('refresh_token')
+    let userName = sessionStorage.getItem('username')
+    
+    let recipientName = document.getElementById("recipient").value
+    let destination = document.getElementById("destination").value 
+    let location = document.getElementById("location").value
+    let packageDesc = document.getElementById("package_desc").value
+    let pickupDate = document.getElementById("pickup_date").value
+    
+    fetch(newOrderResource, {
+        mode: 'cors',
+        method: 'POST',
+        headers: {
+            "Accept": 'application/json',
+            "Content-type": 'application/json; charset=UTF-8',
+            "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify({
+            client_name: userName,
+            recipient_name: recipientName,
+            package_desc: packageDesc,
+            location: location,
+            destination: destination,
+            pickup_date: pickupDate
+        })  
+    })
+    .then((res) => {
+        if (res.status == 201){
+            window.location.href = "order_details.html"
+        }
+        res.json().then((data)=> console.log(data))
+    })
+    .catch((error) => console.log(error));
+}
+
 // Event listeners
 documentTitle = document.querySelector('title').innerText;
 
@@ -187,4 +227,8 @@ if (documentTitle == "Login"){
 
 if (documentTitle == "Dashboard"){
     window.addEventListener('load', dashboard);
+}
+
+if (documentTitle == "New Order"){
+    orderBtn.addEventListener('click', createOrder)
 }
